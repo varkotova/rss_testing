@@ -19,6 +19,6 @@ from apps.rss_news import views
 
 
 urlpatterns = [
-    path('index/', views.index),
-    path('kokoko/', views.kokoko)
+    path('', views.index),
+
 ]

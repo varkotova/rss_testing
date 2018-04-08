@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+import random
 
 
 def index(request):
+    context = {
 
-    return HttpResponse('HI!')
+    }
+    return render(request, 'index.html', context)
 
-def kokoko(request):
 
-    return HttpResponse('kokoko')
 
