@@ -13,6 +13,8 @@ def index(request):
 
     return render(request, 'index.html', context)
 
+
+
 def post(request, number_or_letter):
 
     try:
