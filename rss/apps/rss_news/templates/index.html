@@ -1,12 +1,18 @@
 {% extends 'bootstrap3.html' %}
 {% load bootstrap3 %}
 {% block bootstrap3_content %}
-    <nav class="navbar navbar-default navbar-fixed-top" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0)">
+<nav class="navbar navbar-default navbar-fixed-top" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0)">
         <div class="container">
             <div class="navbar-header">
                 <span>
-                    <a class="navbar-brand"><i class="fa fa-random"></i>RSS News</a>
+                    <a class="navbar-brand"><i class="fa fa-newspaper"></i>RSS News</a>
                 </span>
+            </div>
+            <div class="navbar-right">
+                <div class="navbar-text">
+                    <button class="btn btn-default btn-xs">Log IN</button>
+                    <button class="btn btn-default btn-xs">Log UP</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -16,30 +22,24 @@
     <div class="row">
         <div class="col-xs-0 col-md-3"></div>
             <div class="col-xs-0 col-md-6">
-
+                {% for post in posts %}
                 <div class="post-block">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-xs-12">
-                                <h3>TITLE</h3>
+                                <h3>{{ post.title }}</h3>
                                 <hr>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                        Aenean commodo ligula eget dolor. Aenean massa.
-                                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                                        Nulla consequat massa quis enim.
-                                        Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                                        In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                    <div>{{ post.text }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 text-right">
                                         <div class="btn-group">
-                                            <button class="btn btn-sm btn-default">READ</button>
-                                            <button class="btn btn-sm btn-default">ADD FAVORITE</button>
+                                            <a href = '/post/post.html'><button class="btn btn-sm btn-default">READ</button></a>
+                                            <a href = ''><button class="btn btn-sm btn-default">ADD FAVORITE</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -47,68 +47,8 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="post-block">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h3>TITLE</h3>
-                                <hr>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                        Aenean commodo ligula eget dolor. Aenean massa.
-                                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                                        Nulla consequat massa quis enim.
-                                        Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                                        In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 text-right">
-                                        <div class="btn-group">
-                                            <button class="btn btn-sm btn-default">READ</button>
-                                            <button class="btn btn-sm btn-default">ADD FAVORITE</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="post-block">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h3>TITLE</h3>
-                                <hr>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                        Aenean commodo ligula eget dolor. Aenean massa.
-                                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                                        Nulla consequat massa quis enim.
-                                        Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                                        In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 text-right">
-                                        <div class="btn-group">
-                                            <button class="btn btn-sm btn-default">READ</button>
-                                            <button class="btn btn-sm btn-default">ADD FAVORITE</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <br>
+                {% endfor %}
 
             </div>
         <div class="col-xs-0 col-md-3"></div>
@@ -117,3 +57,4 @@
 
 
 {% endblock %}
+

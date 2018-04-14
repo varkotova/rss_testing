@@ -1,0 +1,24 @@
+{% extends 'bootstrap3.html' %}
+{% load bootstrap3 %}
+{% block bootstrap3_content %}
+<nav class="navbar navbar-default navbar-fixed-top" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0)">
+        <div class="container">
+            <div class="navbar-header">
+                <span>
+                    <a class="navbar-brand"><i class="fa fa-newspaper"></i>RSS News</a>
+                </span>
+            </div>
+            <div class="navbar-right">
+                <div class="navbar-text">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<div> title: {{post.title}}</div>
+<div>text: {{post.text}}</div>
+
+
+{% endblock %}
