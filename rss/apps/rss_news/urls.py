@@ -32,7 +32,10 @@ from apps.rss_news import views
 
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='index'),
     path('post/<slug:number_or_letter>/', views.post),
+    path('sign/', views.sign, name='sign'),
+    path('signup_user', views.signup_user, name='signup_user'),
+    path('sign/check_user_name/', views.check_user_name, name='check_user_name'),
 
 ]
